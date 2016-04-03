@@ -25,7 +25,7 @@ import net.minecraft.block.*;
 public class mod_Elements {
 	public static Block blockTest;
 	public static Block blockTestWithGUI;
-	public static Item itemTest;
+	public static Item itemBase;
 	public static CreativeTabs CreativeTab;
 	
 	public static final String MODID = "elements"; 
@@ -45,22 +45,23 @@ public class mod_Elements {
 	public void preLoad(FMLPreInitializationEvent event)
 
 	{
-//				Following is/are creativeTab(s).
-				CreativeTab = new CreativeTab("elements");
-//				Following is/are block(s).
+//				TODO: creativeTab(s).
+				CreativeTab = new CreativeTab("elements",Items.diamond);
+//				TODO: block(s).
 //										(ID(?),Material,UnlocalizedName,StepSoundType)
 				blockTest = new BaseBlock(1000, Material.rock,  "blocktest",    Block.soundTypeStone);
-//				Following is/are item(s).
-//									(ID(?),UnlocalizedName)
-				itemTest = new BaseItem (20000, "itemtest","H2O");
+//				TODO: item(s).
+//									[ID(?),UnlocalizedName,Tip(Chemical formula)]
+				itemBase = new BaseItem (20000, "itemHCl","HCl",mod_Elements.CreativeTab);
+				itemBase = new BaseItem (20000, "itemHCl","HCl",mod_Elements.CreativeTab);
 				
 				
 				
 
-		GameRegistry.registerItem(itemTest, itemTest.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemBase, itemBase.getUnlocalizedName().substring(5));
 		StatCollector.translateToLocal("itemGroup.elements");
 		StatCollector.translateToLocal("tile.blocktest.name");
-		StatCollector.translateToLocal("item.itemtest.name");
+		StatCollector.translateToLocal("item.itemHCl.name");
 		
 	};
 

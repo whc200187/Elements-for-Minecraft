@@ -1,26 +1,24 @@
 package tk.inlcraft.elements;
 
-import java.util.List;
-
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.*;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.*;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.*;
-import net.minecraft.item.*;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.util.StatCollector;
-import tk.inlcraft.elements.gui.*;
-import net.minecraft.block.*;
+import tk.inlcraft.elements.gui.BlockWithGUI;
+import tk.inlcraft.elements.gui.TileEntityBlockGUI;
 
-@Mod(modid="elements", name="Elements", version="Build 1")
-
-
+@Mod(modid = mod_Elements.MODID, version = mod_Elements.VERSION)
 
 public class mod_Elements {
 	public static Block blockTest;
@@ -59,6 +57,7 @@ public class mod_Elements {
 				
 
 		GameRegistry.registerItem(itemBase, itemBase.getUnlocalizedName().substring(5));
+		//TODO:add item translate
 		StatCollector.translateToLocal("itemGroup.elements");
 		StatCollector.translateToLocal("tile.blocktest.name");
 		StatCollector.translateToLocal("item.itemHCl.name");
@@ -66,7 +65,6 @@ public class mod_Elements {
 	};
 
 	@EventHandler
-
 	public void load(FMLInitializationEvent event)
 
 	{
@@ -76,8 +74,6 @@ public class mod_Elements {
 		
 		
 	}
-
-	 
 
 	@EventHandler
 

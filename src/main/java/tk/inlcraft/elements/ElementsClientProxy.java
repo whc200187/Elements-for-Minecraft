@@ -2,7 +2,8 @@ package tk.inlcraft.elements;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import tk.inlcraft.elements.gui.*;
+import tk.inlcraft.elements.gui.Rendering;
+import tk.inlcraft.elements.gui.TileEntityBlockGUI;
 
 public class ElementsClientProxy extends ElementsCommonProxy{
 	public void preInit() {
